@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Data layer lives in src/lib/store.ts: Supabase when VITE_SUPABASE_* are set, localStorage demo otherwise — why: user hosts own Supabase; preview must work without it.
+- backend/ is a standalone Node server (Groq FAQ) run on the user's own server; the Groq key stays in backend/.env only.
+- Product private delivery content lives in product_private (admin-only RLS), never on the public products row.
